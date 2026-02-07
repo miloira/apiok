@@ -521,10 +521,12 @@ body.resizing iframe {
 }
 
 .expand-icon {
-  font-size: 0.7rem;
   color: var(--text-muted);
   transition: transform 0.2s;
   width: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .expand-icon.expanded {

@@ -665,7 +665,7 @@ function App() {
           onDragEnd={handleDragEnd}
         >
           <span className="drag-handle">⋮⋮</span>
-          <span className={`expand-icon ${isExpanded ? 'expanded' : ''}`}>▶</span>
+          <span className={`expand-icon ${isExpanded ? 'expanded' : ''}`}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
           <span className="folder-icon">{Icons.folder()}</span>
           <span className="item-name">{folder.name}</span>
           <span className="item-count">{folder.children.length + folder.requests.length}</span>
@@ -753,6 +753,7 @@ function App() {
         )}
         {contextMenu.type === 'folder' && contextMenu.targetId && (
           <>
+            <div className="menu-item" onClick={() => { newRequest(contextMenu.targetId); setExpandedFolders(prev => new Set([...prev, contextMenu.targetId!])); setContextMenu(null); }}><span className="menu-icon">{Icons.plus()}</span> 新建请求</div>
             <div className="menu-item" onClick={() => { setShowFolderModal(true); setNewFolderParentId(contextMenu.targetId); setContextMenu(null); }}><span className="menu-icon">{Icons.folder()}</span> 新建子文件夹</div>
             <div className="menu-item" onClick={() => {
               const findFolder = (flds: Folder[]): Folder | undefined => {
