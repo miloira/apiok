@@ -1581,10 +1581,37 @@ body.resizing iframe {
 }
 
 .param-td-check input[type="checkbox"] {
-  width: 15px;
-  height: 15px;
-  accent-color: var(--primary);
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--input-border);
+  border-radius: 4px;
   cursor: pointer;
+  position: relative;
+  transition: all 0.15s ease;
+  background: var(--card-bg);
+}
+
+.param-td-check input[type="checkbox"]:hover {
+  border-color: var(--primary-light);
+}
+
+.param-td-check input[type="checkbox"]:checked {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.param-td-check input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .param-td-action {
