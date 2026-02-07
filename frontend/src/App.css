@@ -1337,8 +1337,7 @@ body.resizing iframe {
   gap: 8px;
   padding: 6px 10px;
   flex-shrink: 0;
-  border-bottom: 1px solid #eee;
-  background: #fafafa;
+  background: transparent;
 }
 
 .code-block-tag {
